@@ -99,7 +99,7 @@ jobs:
       if: failure() && matrix.os == 'windows-latest'
       shell: bash
       working-directory: ${{runner.workspace}}/build
-      run: cat ./_CPack_Packages/win64/NSIS/NSISOutput.log ; cat ./_CPack_Packages/win64/NSIS/project.nsi"
+      run: cat ./_CPack_Packages/win64/NSIS/NSISOutput.log ; cat ./_CPack_Packages/win64/NSIS/project.nsi
 
   build_full_linux:
     runs-on: ubuntu-latest
