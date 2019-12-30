@@ -93,6 +93,10 @@ jobs:
       working-directory: ${{runner.workspace}}/build
       shell: bash
       run: cmake --build . --config $BUILD_TYPE --target packaged-server-console
+    - name: Make Space
+      working-directory: ${{runner.workspace}}/build
+      shell: bash
+      run: rm -rf libraries
     - name: Build Installer
       working-directory: ${{runner.workspace}}/build
       shell: bash
