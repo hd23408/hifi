@@ -96,7 +96,7 @@ jobs:
     - name: Make Space
       working-directory: ${{runner.workspace}}/build
       shell: bash
-      run: rm -rf libraries
+      run: rm -rf /tmp
     - name: Build Installer
       working-directory: ${{runner.workspace}}/build
       shell: bash
@@ -105,7 +105,7 @@ jobs:
       if: failure() && matrix.os == 'windows-latest'
       shell: bash
       working-directory: ${{runner.workspace}}/build
-      run: df -h . ; cat ./_CPack_Packages/win64/NSIS/NSISOutput.log ; cat ./_CPack_Packages/win64/NSIS/project.nsi
+      run: cat ./_CPack_Packages/win64/NSIS/NSISOutput.log
 
   build_full_linux:
     runs-on: ubuntu-latest
